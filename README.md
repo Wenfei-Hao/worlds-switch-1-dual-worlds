@@ -51,6 +51,38 @@ The project is designed as a **technical exploration** for a game development–
 
 ---
 
+## Demo & Visual Explanations
+
+▶️ **Demo Video (Gameplay Overview)**  
+<https://drive.google.com/file/d/1PbtXZA32j94-YMqD0Afo6YDeQwKQgo0z/view?usp=sharing>
+
+This ~1 min video demonstrates real-time world switching, the screen-space time device, and their interaction with level design and enemy behavior.
+
+---
+
+### Time Device for Route Planning
+
+![Time device revealing the alternate world](README-assets/time-device-routing.png)
+
+The time device reveals the corresponding region in the **other world** directly within the player’s main camera view.
+
+In this example, an obstacle blocks forward movement in **World A**, while the same space in **World B** remains traversable.  
+By previewing spatial constraints before switching worlds, players can plan routes deliberately rather than relying on trial-and-error.
+
+---
+
+### World-Bound Enemy Logic and Projection Cues
+
+![Enemy projection indicating position in the other world](README-assets/enemy-cross-world-projection.png)
+
+Enemy perception, pursuit, and attack logic are strictly **world-bound** and cannot cross timelines.
+
+To support situational awareness, enemies leave behind a minimal **projection marker** in the alternate world, indicating their corresponding spatial position without revealing the full enemy model.
+
+This allows players to anticipate danger, evade pursuit by switching worlds, and re-enter hostile spaces with informed risk assessment.
+
+---
+
 ## Tech Stack
 
 * **Engine**: Unity 2022 LTS (3D, Built-in Render Pipeline)
